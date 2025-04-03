@@ -78,7 +78,13 @@ export default function LeaderboardPage() {
 
     return () => clearInterval(timer)
   }, [isOpen])
-
+  // Function to get rank icon based on index
+  const getRankIcon = (index: number) => {
+    if (index === 0) return "/images/rank1.png"
+    if (index === 1) return "/images/rank2.png"
+    if (index === 2) return "/images/rank3.png"
+    return null
+  }
   if (!isOpen)
     return (
       <button
@@ -90,7 +96,7 @@ export default function LeaderboardPage() {
     )
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-peach-100 mt-2" style={{ backgroundColor: "#FFDECB" }}>
+    <div className="min-h-screen flex items-center justify-center bg-peach-100 pt-2" style={{ backgroundColor: "#FFDECB" }}>
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
