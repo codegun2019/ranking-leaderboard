@@ -22,7 +22,7 @@ const generateUsers = () => {
       id: i,
       username: maskedNumber,
       score: Math.floor(Math.random() * 50000) + 5000,
-      avatar: `/placeholder.svg?height=40&width=40`,
+      avatar: `/profile.webp?height=40&width=40`,
     })
   }
   return users.sort((a, b) => b.score - a.score)
@@ -152,7 +152,7 @@ export default function LeaderboardPage() {
                         }`}
                       >
                         <Image
-                          src={getRankIcon(index) || "/placeholder.svg"}
+                          src={getRankIcon(index) || "/profile.webp"}
                           alt={`Rank ${index + 1}`}
                           width={40}
                           height={40}
@@ -171,7 +171,7 @@ export default function LeaderboardPage() {
                     } ml-2`}
                   >
                     <Image
-                      src={user.avatar || "/placeholder.svg"}
+                      src={user.avatar || "/profile.webp"}
                       alt={user.username}
                       width={40}
                       height={40}
@@ -220,7 +220,7 @@ export default function LeaderboardPage() {
                 >
                   <div className="w-8 h-8 flex items-center justify-center">
                     <Image
-                      src={getRankIcon(index) || "/placeholder.svg"}
+                      src={getRankIcon(index) || "/profile.webp"}
                       alt={`Rank ${index + 1}`}
                       width={32}
                       height={32}
