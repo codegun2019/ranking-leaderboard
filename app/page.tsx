@@ -90,7 +90,7 @@ export default function LeaderboardPage() {
     )
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-peach-100" style={{ backgroundColor: "#FFDECB" }}>
+    <div className="min-h-screen flex items-center justify-center bg-peach-100 mt-2" style={{ backgroundColor: "#FFDECB" }}>
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -107,7 +107,7 @@ export default function LeaderboardPage() {
         <div className="relative h-20 mb-4 flex items-center justify-center">
           <div className="absolute inset-0 bg-red-500 rounded-full transform -skew-y-1 shadow-inner"></div>
           <div className="absolute inset-x-0 top-0 bottom-2 bg-red-400 rounded-full transform -skew-y-1"></div>
-          <h1 className="relative text-3xl font-extrabold text-white tracking-wider z-10 mt-1">LEADERBOARD</h1>
+          <h1 className="relative text-3xl font-extrabold text-white tracking-wider z-10 mt-1">TOP BONUS</h1>
         </div>
 
         {/* Leaderboard Content */}
@@ -196,7 +196,7 @@ export default function LeaderboardPage() {
         {/* Top 3 Winners Banner */}
         {displayUsers.length > 0 && (
           <div className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400 rounded-xl p-3 text-center shadow-md">
-            <h2 className="text-white font-bold text-lg">🏆 Top Winners 🏆</h2>
+            <h2 className="text-white font-bold text-lg">🏆 อันดับโบนัส 🏆</h2>
             <div className="flex justify-around mt-2">
               {displayUsers.slice(0, Math.min(3, displayUsers.length)).map((user, index) => (
                 <motion.div
@@ -222,9 +222,9 @@ export default function LeaderboardPage() {
 
         {/* Countdown Timer */}
         <div className="mt-4 text-center">
-          <span className="text-orange-800 font-bold">Next random in: </span>
+          <span className="text-orange-800 font-bold">จะรีเซ็ทภายในเวลา: </span>
           <span className="text-orange-600 font-bold">{timeRemaining}</span>
-          <span className="text-orange-800 font-bold"> seconds</span>
+          <span className="text-orange-800 font-bold"> วินาที</span>
         </div>
 
         {/* Randomize Button */}
@@ -233,7 +233,7 @@ export default function LeaderboardPage() {
           onClick={randomizeUsers}
           className="mt-2 w-full bg-orange-500 text-white font-bold py-2 rounded-xl hover:bg-orange-600 transition-colors"
         >
-          Randomize from 1000 Numbers
+          รีเซ็ทอันดับโดยไม่ต้องรอ
         </motion.button>
       </motion.div>
     </div>
