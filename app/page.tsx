@@ -151,7 +151,13 @@ export default function LeaderboardPage() {
                               : "bg-pink-300 text-pink-800 shadow-inner shadow-pink-500"
                         }`}
                       >
-                        <span className="text-xl font-bold">{index + 1}</span>
+                        <Image
+                          src={getRankIcon(index) || "/placeholder.svg"}
+                          alt={`Rank ${index + 1}`}
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                        />
                       </motion.div>
                     ) : (
                       <span className="text-xl font-bold text-orange-700">{index + 1}</span>
@@ -212,12 +218,14 @@ export default function LeaderboardPage() {
                   transition={{ delay: 0.5 + index * 0.2, type: "spring" }}
                   className="flex flex-col items-center"
                 >
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                      index === 0 ? "bg-yellow-300" : index === 1 ? "bg-blue-300" : "bg-pink-300"
-                    }`}
-                  >
-                    <span className="text-lg font-bold">{index + 1}</span>
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <Image
+                      src={getRankIcon(index) || "/placeholder.svg"}
+                      alt={`Rank ${index + 1}`}
+                      width={32}
+                      height={32}
+                      className="object-contain"
+                    />
                   </div>
                   <span className="text-sm font-bold text-white mt-1">{user.score}</span>
                 </motion.div>
